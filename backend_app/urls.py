@@ -24,5 +24,6 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('imageupload_rest.urls'))
+    path('api/', include('imageupload_rest.urls')),
+    path('', include('imageupload_frontend.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
