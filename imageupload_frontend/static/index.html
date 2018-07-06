@@ -8,13 +8,23 @@
     <script src="node_modules/angular-resource/angular-resource.js"></script>
     <!--Include AppJs -->
     <script src="js/app.js"></script>
+    <script src="js/images.res.js"></script>
 </head>
 
 
 <body>
    <div ng-app="imageuploadFrontendApp" ng-controller="MainCtrl">
         <h4>Python Rest Django AngularJS</h4>
-
+        <br/>
+       <!--
+        <textarea rows="20", cols="50">
+            {{ images }}
+        </textarea>
+        -->
+       <div ng-repeat="image in images track by image.pk">
+            <h4>Image {{image.pk}} </h4>
+            <img src="{{ image.image }}" width="800" height="400">
+       </div>
    </div>
 </body>
 </html>
